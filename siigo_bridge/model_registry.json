@@ -1,0 +1,106 @@
+[
+  {
+    "public_id": "gpt-5.6-sol",
+    "upstream_id": "6a509b23a36e63734c28aef9",
+    "name": "GPT-5.6 Sol",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol"
+  },
+  {
+    "public_id": "qwen3.8-max",
+    "upstream_id": "6a5de17bdd73be2b8620a0b0",
+    "name": "Qwen3.8 Max",
+    "api": "openai-completions",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://www.alibabacloud.com/help/en/model-studio/text-generation-model"
+  },
+  {
+    "public_id": "glm-5.2",
+    "upstream_id": "6a5de2b9dd73be2b8620a0b1",
+    "name": "GLM-5.2",
+    "api": "openai-completions",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://docs.z.ai/guides/llm/glm-5.2"
+  },
+  {
+    "public_id": "deepseek-v4.1-flash",
+    "upstream_id": "6a7a84c9becddb9d3bd45315",
+    "name": "DeepSeek V4.1 Flash",
+    "api": "openai-completions",
+    "manufacturer_context_window": 1048576,
+    "context_source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/config.json"
+  },
+  {
+    "public_id": "gpt-5.6-terra",
+    "upstream_id": "6a868fab19b16207d6da1d49",
+    "name": "GPT-5.6 Terra",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+  },
+  {
+    "public_id": "qwen3.8-flash",
+    "upstream_id": "6a9b83338477e85a1a55ab19",
+    "name": "Qwen3.8 Flash",
+    "api": "openai-completions",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://www.alibabacloud.com/help/en/model-studio/text-generation-model"
+  },
+  {
+    "public_id": "gpt-6-astra",
+    "upstream_id": "6a9b8a828477e85a1a55ae7e",
+    "name": "GPT-6 Astra",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+  },
+  {
+    "public_id": "gpt-6-sol",
+    "upstream_id": "6ab32cbe4075c4baf50b8326",
+    "name": "GPT-6 Sol",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+  },
+  {
+    "public_id": "gpt-6-luna",
+    "upstream_id": "6ab32ddc4075c4baf50b8350",
+    "name": "GPT-6 Luna",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+  },
+  {
+    "public_id": "gpt-6.1-sol",
+    "upstream_id": "6abc6c6212ee6ff04f7eaee3",
+    "name": "GPT-6.1 Sol",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1050000,
+    "context_source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol"
+  },
+  {
+    "public_id": "claude-fable-5-1",
+    "upstream_id": "6acf4e7028d0dd116e3fcd88",
+    "name": "Claude Fable 5.1",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://platform.claude.com/docs/en/models/overview"
+  },
+  {
+    "public_id": "claude-sonnet-5-5",
+    "upstream_id": "6acf527928d0dd116e3fcea8",
+    "name": "Claude Sonnet 5.5",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://platform.claude.com/docs/en/models/overview"
+  },
+  {
+    "public_id": "claude-opus-5-5",
+    "upstream_id": "6acf52d728d0dd116e3fcece",
+    "name": "Claude Opus 5.5",
+    "api": "openai-responses",
+    "manufacturer_context_window": 1000000,
+    "context_source_url": "https://platform.claude.com/docs/en/models/overview"
+  }
+]

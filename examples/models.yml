@@ -1,0 +1,415 @@
+providers:
+  siigo-local:
+    baseUrl: http://127.0.0.1:8766/v1
+    auth: apiKey
+    authHeader: true
+    apiKey: "!C:/Siigo2api/.venv/Scripts/python.exe -m siigo_bridge key"
+    models:
+    # Manufacturer context budgets are pending Siigo confirmation.
+      - id: gpt-5.6-sol
+        name: GPT-5.6 Sol
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: qwen3.8-max
+        name: Qwen3.8 Max
+        api: openai-completions
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, xhigh]
+          defaultLevel: low
+          requiresEffort: true
+          effortMap:
+            low: low
+            medium: medium
+            xhigh: xhigh
+        compat:
+          supportsDeveloperRole: false
+          supportsStore: false
+          supportsReasoningEffort: true
+          thinkingFormat: qwen
+          qwenTemplateReasoningEffort: true
+          maxTokensField: max_completion_tokens
+          reasoningContentField: reasoning_content
+          replayReasoningContent: true
+      - id: glm-5.2
+        name: GLM-5.2
+        api: openai-completions
+        reasoning: true
+        input: [text]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [high, max]
+          defaultLevel: high
+          requiresEffort: true
+          effortMap:
+            high: high
+            max: max
+        compat:
+          supportsDeveloperRole: false
+          supportsStore: false
+          supportsReasoningEffort: true
+          thinkingFormat: qwen
+          qwenTemplateReasoningEffort: true
+          maxTokensField: max_completion_tokens
+          reasoningContentField: reasoning_content
+          replayReasoningContent: true
+      - id: deepseek-v4.1-flash
+        name: DeepSeek V4.1 Flash
+        api: openai-completions
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1048576
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, high, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            high: high
+            max: max
+        compat:
+          supportsDeveloperRole: false
+          supportsStore: false
+          supportsReasoningEffort: true
+          maxTokensField: max_tokens
+          thinkingFormat: zai
+          reasoningContentField: reasoning_content
+          replayReasoningContent: true
+          requiresReasoningContentForToolCalls: true
+          allowsSyntheticReasoningContentForToolCalls: false
+          requiresAssistantContentForToolCalls: false
+          supportsStrictMode: true
+      - id: gpt-5.6-terra
+        name: GPT-5.6 Terra
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: qwen3.8-flash
+        name: Qwen3.8 Flash
+        api: openai-completions
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [high, max]
+          defaultLevel: high
+          requiresEffort: true
+          effortMap:
+            high: high
+            max: max
+        compat:
+          supportsDeveloperRole: false
+          supportsStore: false
+          supportsReasoningEffort: true
+          thinkingFormat: qwen
+          qwenTemplateReasoningEffort: true
+          maxTokensField: max_completion_tokens
+          reasoningContentField: reasoning_content
+          replayReasoningContent: true
+      - id: gpt-6-astra
+        name: GPT-6 Astra
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: true
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+      - id: gpt-6-sol
+        name: GPT-6 Sol
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: gpt-6-luna
+        name: GPT-6 Luna
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: gpt-6.1-sol
+        name: GPT-6.1 Sol
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1050000
+        maxTokens: 128000
+        tokenizer: o200k
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: true
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+      - id: claude-fable-5-1
+        name: Claude Fable 5.1
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: claude-sonnet-5-5
+        name: Claude Sonnet 5.5
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: false
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false
+          reasoningDisableMode: none-effort
+      - id: claude-opus-5-5
+        name: Claude Opus 5.5
+        api: openai-responses
+        reasoning: true
+        input: [text, image]
+        contextWindow: 1000000
+        maxTokens: 128000
+        # Siigo billing units are uncalibrated; these zeros do not mean free.
+        cost:
+          input: 0
+          output: 0
+          cacheRead: 0
+          cacheWrite: 0
+        thinking:
+          mode: effort
+          efforts: [low, medium, high, xhigh, max]
+          defaultLevel: low
+          requiresEffort: true
+          effortMap:
+            low: low
+            medium: medium
+            high: high
+            xhigh: xhigh
+            max: max
+        compat:
+          supportsDeveloperRole: true
+          supportsReasoningEffort: true
+          supportsStrictMode: true
+          supportsSamplingParams: false
+          statefulResponses: false

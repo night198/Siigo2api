@@ -1,0 +1,43 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+*.dpapi
+*.dpapi.*
+*.log
+
+# Build and test artifacts
+build/
+dist/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+node_modules/
+
+# Local credentials, settings and runtime data
+.env
+.env.*
+secrets/
+credentials/
+local/
+local-data/
+data/
+logs/
+*.local.yml
+*.local.yaml
+*.local.json
+
+# Editor and OS caches
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

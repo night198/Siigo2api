@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siigo-api-bridge"
+version = "0.4.0"
+description = "Windows native model bridge for OMP with public model IDs, sourced manufacturer budgets and Siigo QR authentication."
+requires-python = ">=3.11"
+dependencies = [
+  "requests>=2.32,<3",
+  "websockets>=15,<17",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.30,<1",
+  "qrcode>=8,<9",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "httpx>=0.27,<1"]
+
+[project.scripts]
+siigo-bridge = "siigo_bridge.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["siigo_bridge*"]
+
+[tool.setuptools.package-data]
+siigo_bridge = ["worker.js", "model_registry.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
